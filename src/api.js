@@ -1,4 +1,6 @@
-const API_URL = (import.meta.env.VITE_API_URL || '/api').replace(/\/+$/, '')
+const API_URL = (import.meta.env.VITE_API_URL || (import.meta.env.PROD
+  ? 'https://product-crud-react.onrender.com/api'
+  : '/api')).replace(/\/+$/, '')
 export async function request(path, { token, ...options } = {}) {
   let response
   try {

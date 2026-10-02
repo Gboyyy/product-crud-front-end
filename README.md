@@ -14,6 +14,8 @@ Start MySQL in WAMP, then run `npm run dev:api` in a separate terminal from this
 
 Development uses `VITE_API_URL=/api`; Vite proxies API requests to `API_PROXY_TARGET` (default `http://127.0.0.1:8000`). To use WAMP Apache instead, set `API_PROXY_TARGET=http://localhost/lab6_crud/public` and restart Vite. For a separately hosted production API, set `VITE_API_URL` to its full URL ending in `/api` and set the backend `FRONTEND_URL` to the frontend origin. Never put database credentials into frontend environment variables.
 
+Production builds use `.env.production`, which points to `https://product-crud-react.onrender.com/api`. In Render, remove any `VITE_API_URL=/api` override or change it to this full backend URL, then redeploy the frontend. The development proxy does not run in production.
+
 Use the Test API routes link to open https://api-tester.marasigan.dev/. See ../API-TESTING.md for routes and request examples.
 
 ## Deploy to Render with Docker
